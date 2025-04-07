@@ -1,0 +1,25 @@
+export function parseToken(data: any) {
+    return {
+        bonus_tokens: Number(data.bonus_tokens) || 0,
+        circulation: Number(data.circulation) || 0,
+        is_migrated: data.is_migrated || false,
+        migration_progress: Number(data.migration_progress) || 0,
+        name: data.name || "",
+        symbol: data.symbol || "",
+        created_at: new Date(data.created_at),
+        updated_at: new Date(data.updated_at),
+        token0_reserve: Number(data.token0_reserve) || 0,
+        token1_reserve: Number(data.token1_reserve) || 0,
+        last_tx_timestamp: new Date(data.last_tx_timestamp),
+        liquidity_pool: data.liquidity_pool || "",
+        owner: data.owner || "",
+        token_address: data.token_address || "",
+        mcap: Number(data.mcap) || 0,
+        mcap_change_24h: Number(data.mcap_change_24h) || 0,
+        old_price: Number(data.old_price) || 0,
+        price: Number(data.price) || 0,
+        price_change_24h: Number(data.price_change_24h) || 0,
+        token_id: Number(data.token_id) || 0,
+        volume: Number(data.volume) || 0,
+    } as Token
+}

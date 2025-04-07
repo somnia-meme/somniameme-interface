@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --background: #070707;
+  --foreground: #fff;
+
+  /* Functional Color System */
+  /* Primary Colors - Mavi tonları */
+  --primary-lighter: #a5b4fc; /* Indigo-300 */
+  --primary-light: #818cf8; /* Indigo-400 */
+  --primary: #6366f1; /* Indigo-500 */
+  --primary-dark: #4f46e5; /* Indigo-600 */
+  --primary-darker: #4338ca; /* Indigo-700 */
+  --primary-darkest: #312e81; /* Indigo-900 */
+
+  /* Secondary Colors - Turkuaz tonları */
+  --secondary-light: #5eead4; /* Teal-400 */
+  --secondary: #14b8a6; /* Teal-500 */
+  --secondary-dark: #0d9488; /* Teal-600 */
+
+  /* Info Colors - Cyan tonları */
+  --info-light: #67e8f9; /* Cyan-400 */
+  --info: #06b6d4; /* Cyan-500 */
+  --info-dark: #0891b2; /* Cyan-600 */
+
+  /* Success Colors */
+  --success-light: #4ade80; /* Green-400 */
+  --success: #22c55e; /* Green-500 */
+  --success-dark: #16a34a; /* Green-600 */
+  --success-darker: #15803d; /* Green-700 */
+
+  /* Warning Colors */
+  --warning-light: #fbbf24; /* Amber-400 */
+  --warning: #f59e0b; /* Amber-500 */
+  --warning-dark: #d97706; /* Amber-600 */
+
+  /* Danger Colors */
+  --danger-light: #fb7185; /* Rose-400 - daha soft */
+  --danger: #f43f5e; /* Rose-500 - daha soft */
+  --danger-dark: #e11d48; /* Rose-600 - daha soft */
+  --danger-darker: #be123c; /* Rose-700 - daha soft */
+
+  /* Background Surfaces */
+  --surface-light: rgba(30, 41, 59, 0.3); /* Slate tonu */
+  --surface: rgba(22, 27, 34, 0.3); /* Soft dark */
+  --surface-dark: rgba(15, 23, 42, 0.3); /* Slate 900 tonu */
+
+  /* Overlay Colors */
+  --overlay-indigo: rgba(59, 130, 246, 0.1); /* Blue tonu overlay */
+  --overlay-teal: rgba(20, 184, 166, 0.4); /* Teal tonu overlay */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+}
+
+* {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+}
+
+/* Swiper styles for transactions ticker */
+.transactions-swiper .swiper-slide {
+  width: auto !important;
+}
+
+/* New transaction animation */
+@keyframes highlightNew {
+  0% {
+    background-color: var(--primary-dark);
+    box-shadow: 0 0 8px var(--primary);
+  }
+  50% {
+    background-color: var(--primary-light);
+    box-shadow: 0 0 12px var(--primary-lighter);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.new-transaction {
+  animation: highlightNew 3s ease-out forwards;
+  position: relative;
+  z-index: 10;
+}
